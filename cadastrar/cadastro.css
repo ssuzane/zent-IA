@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Marcellus&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #E6DFE7;
+    align-items: center;
+    justify-content: center;
+}
+
+header{
+    background-image: url(./img/header.svg);
+    
+}
+
+header .cor{
+    height: 15vw;
+    background-color: #341f3eb2;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.acess{
+    position: absolute;
+    margin-top: 200px;
+}
+
+.acess h1{
+    font-size: 80px;
+    color: #681F61;
+    font-family: 'Corben';
+    font-weight: 400;
+}
+
+.acess input{
+    width: 30vw;
+    height: 25px;
+    border: #e65dd8;
+    border-radius: 5px;
+}
+
+.acess .seg{
+    position: absolute;
+    top: 25vw;
+    height: 90vw;
+}
+
+.seg .mail{
+    margin-bottom: 40px;
+}
+
+.seg p{
+    font-family: 'Marcellus';
+}
+
+button{
+    width: 20vw;
+    height: 30px;
+    background-color: #681F61;
+    border-radius: 5px;
+    border: none;
+    position: absolute;
+    top: 20vw;
+    right: 50px;
+}
+
+button p{
+    color: white;
+    font-family: 'Marcellus';
+}
+
+footer {
+    align-items: center;
+    justify-self: center;
+    display: flex;
+}  
+
+footer p{
+    padding: 30px;
+    bottom: 40px;
+    position: absolute;
+    right: 35vw;
+    text-decoration: underline overline;
+}

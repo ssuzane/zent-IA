@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Marcellus&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #E6DFE7;
+    align-items: center;
+    justify-content: center;
+}
+
+.pesq input{
+    position: absolute;
+    bottom: 60px;
+    right: 25vw;
+    width: 50vw;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+}
+
+.fot{
+    padding: 30px;
+    color: #681F61;
+    font-family: 'Marcellus';
+}
+
