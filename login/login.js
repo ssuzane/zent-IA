@@ -1,40 +1,41 @@
-'use strict'
+const button = document.getElementById('login')
 
-async function validarLogin() {
+
+const validarLogin = async () => {
     const email = document.getElementById('mail').value
-    const senha = document.getElementById('senha').value
+    const password = document.getElementById('senha').value
 
-    if (email === '' || senha === '') {
-        alert('Vejas os campos corretamente')
-        return false
+    const urlLogin = 'https://back-login.vercel.app/usuarios'
+
+    const listUsers = await fetch(urlLogin)
+
+    const objUsers = await listUsers.json()
+
+    if (email == '' || password == ''){
+        alert('Por Favor Preencha todos os Campos !!')
     } else {
 
-        try {
-            const users = await fetch('https://back-login.vercel.app/usuarios', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'appplication/json',
-                }
-            })
+        let validaUser = false
 
-            const listUsers = await users.json()
+        objUsers.forEach(user => {
+        
+            if(user.email == email && user.senha == password){
+                validaUser = true
+                window.location.href = './home/home.html'
+            }
+        });
 
-            listUsers.forEach((user) => {
-                if(email === user.email && senha === user.senha){
-
-                    localStorage.setItem('nomeUser',user.nome)
-                    localStorage.setItem('idUser', user.id)
-                    localStorage.setItem('emailUser', user.email)
-                    localStorage.setItem('premium', user.premium)
-                    
-                    alert('User logado com sucesso!!')
-                    window.location.href = "../home/home.html"
-                }
-            })
+        if (!validaUser){
+            alert('Por favor verifique o email e senha !!')
         }
-        catch (error) {
-            alert('Erro ao acessar a API')
-            console.error(error)
-        }
+
     }
+
 }
+
+
+
+
+button.addEventListener('click', () => {
+    validarLogin()
+})
